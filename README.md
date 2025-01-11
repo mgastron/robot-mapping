@@ -1,13 +1,72 @@
-# Robotica
+# Robot Pioneer P3DX - Sistema de Navegación
 
-This repository provides software tools for robots.  It includes [Python3](https://www.python.org/) code for managing the communication with robotic simulators such as [CoppeliaSim](https://www.coppeliarobotics.com/) and some samples of wheeled robot controllers.
+Sistema de navegación autónoma para el robot Pioneer P3DX implementado en CoppeliaSim, utilizando Python y la API remota ZMQ.
 
-The repository can be downloaded and used as needed.  It is encouraged to maintain the original directory structure as in the repository.  It will be described any specific dependency between modules or scripts.
+## Descripción
+Este proyecto implementa un sistema de navegación autónoma basado en wall-following para el robot Pioneer P3DX. El robot utiliza sensores ultrasónicos para detectar y evitar obstáculos mientras navega por el entorno.
 
-## License
+## Características Principales
+- Navegación autónoma usando wall-following
+- Detección y evasión de obstáculos
+- Manejo inteligente de esquinas
+- Control suave de velocidad
+- Integración con CoppeliaSim
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+## Requisitos Previos
+- Python 3.x
+- CoppeliaSim EDU/PRO
+- Bibliotecas Python (ver requirements.txt)
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+## Instalación
 
-You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+1. Clona este repositorio:
+git clone https://github.com/mgastron/robot-mapping.git
+
+2. Instala las dependencias:
+pip install -r requirements.txt
+
+3. Configura CoppeliaSim:
+    - Instala CoppeliaSim
+   - Asegúrate de que el puerto ZMQ esté configurado correctamente
+   - Carga la escena del Pioneer P3DX incluida en la carpeta `scenes`
+
+## Estructura del Proyecto
+robot-mapping/
+├── coppelia/
+│ └── zmqRemoteApi/
+│ └── python/
+│ ├── avoid.py # Algoritmo de navegación
+│ ├── robotica.py # Interfaz con CoppeliaSim
+│ ├── main.py # Programa principal
+│ └── mapping.py # Funciones de mapeo
+├── scenes/ # Escenas de CoppeliaSim
+├── README.md
+└── requirements.txt
+
+
+## Uso
+
+1. Abre CoppeliaSim y carga una escena del Pioneer P3DX
+2. Ejecuta el programa principal:
+python main.py
+
+
+## Funcionamiento
+El robot utiliza sus sensores ultrasónicos para:
+- Detectar obstáculos en su entorno
+- Mantener una distancia segura de las paredes
+- Navegar evitando colisiones
+- Manejar situaciones especiales como esquinas
+
+## Contribuciones
+Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir los cambios que te gustaría hacer.
+
+## Licencia
+Este proyecto está bajo la Licencia MIT. Ver el archivo LICENSE para más detalles.
+
+## Autor
+Matías Gasstron
+
+## Agradecimientos
+- Universidad Rey Juan Carlos
+- Dr. Javier de Lope
