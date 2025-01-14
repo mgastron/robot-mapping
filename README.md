@@ -66,7 +66,5 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo LICENSE para más detal
 
 ## Autor
 Matías Gasstron
-
-## Agradecimientos
-- Universidad Rey Juan Carlos
-- Dr. Javier de Lope
+Andrea Orama
+Omar Teixeira
